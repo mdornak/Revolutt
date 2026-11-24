@@ -60,8 +60,8 @@
     footer { padding:27px 0; color:var(--muted); font-size:12px; }
     .footer-inner { display:flex; justify-content:space-between; gap:20px; }
     @media (max-width:760px) {
-      html, body { height:100%; overflow:hidden; overscroll-behavior:none; }
-      body { height:100dvh; background-image:url('landing_page_mobil.png'); background-position:center top; background-size:100% 100dvh; background-attachment:scroll; }
+      html, body { height:100%; overflow-x:hidden; overscroll-behavior-y:auto; }
+      body { height:calc(100dvh + 1px); background-image:url('landing_page_mobil.png'); background-position:center top; background-size:100% 100dvh; background-attachment:scroll; }
       .wrap { width:min(100% - 36px, 560px); }
       .site-header { height:70px; }
       .site-header img { width:112px; max-height:40px; }
