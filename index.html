@@ -28,6 +28,7 @@
     h1 { max-width:680px; margin:0; font-family:var(--heading); font-weight:500; -webkit-text-stroke:2px currentColor; text-shadow:0 0 .35px currentColor; font-size:clamp(56px, 7.7vw, 98px); letter-spacing:-4.5px; line-height:.98; }
     h1 em { color:inherit; font-style:normal; font-weight:500; }
     .intro { max-width:900px; margin:26px 0 30px; color:var(--ink); font-size:24px; font-weight:500; -webkit-text-stroke:.4px currentColor; line-height:1.7; }
+    .intro-mobile { display:none; }
     .underlined { text-decoration:underline; text-underline-offset:3px; }
     .actions { display:inline-flex; flex-direction:column; align-items:stretch; gap:24px; width:min(100%, 480px); margin-top:22px; }
     .button-color-block { display:flex; align-items:center; justify-content:flex-start; gap:14px; width:100%; min-height:64px; padding:14px 22px; background:#DBD4D0; border-radius:20px; color:var(--ink); font-size:22px; line-height:1.4; text-align:left; }
@@ -59,14 +60,18 @@
     footer { padding:27px 0; color:var(--muted); font-size:12px; }
     .footer-inner { display:flex; justify-content:space-between; gap:20px; }
     @media (max-width:760px) {
-      body { background-image:url('landing_page_mobil.png'); }
+      body { background-image:url('landing_page_mobil.png'); background-position:center top; background-size:100% 125svh; background-attachment:scroll; }
       .wrap { width:min(100% - 36px, 560px); }
       .site-header { height:70px; }
       .site-header img { width:128px; max-height:46px; }
       nav { gap:17px; }
       nav a:not(.nav-cta) { display:none; }
-      .hero { grid-template-columns:1fr; padding:60px 0 45px; gap:38px; }
-      h1 { letter-spacing:-3px; }
+      .hero { grid-template-columns:1fr; padding:32px 0 210px; gap:38px; min-height:calc(125svh - 70px); }
+      .hero > div:first-child { transform:none; }
+      h1 { font-size:clamp(40px, 9vw, 52px); letter-spacing:-2px; }
+      .intro-desktop { display:none; }
+      .intro-mobile { display:inline; }
+      .actions { position:fixed; z-index:20; left:18px; right:18px; bottom:calc(12px + env(safe-area-inset-bottom)); width:auto; max-width:560px; margin:0 auto; gap:12px; }
       .visual { height:340px; }
       .visual:before { width:260px; height:260px; }
       .visual:after { height:230px; }
@@ -90,7 +95,7 @@
       <section class="hero" id="domu">
         <div>
           <h1>Získejte bonus 1500Kč</h1>
-          <p class="intro">Ať už jste doma nebo v zahraničí, působíte lokálně nebo globálně – přecházejte bez problémů mezi zeměmi a měnami. Zaregistrujte se zdarma jedním klepnutím. Musí vám být 18 let nebo více. <span class="underlined">V případě dotazů nás neváhejte kontaktovat</span>.</p>
+          <p class="intro"><span class="intro-desktop">Ať už jste doma nebo v zahraničí, působíte lokálně nebo globálně – přecházejte bez problémů mezi zeměmi a měnami. Zaregistrujte se zdarma jedním klepnutím. Musí vám být 18 let nebo více. <span class="underlined">V případě dotazů nás neváhejte kontaktovat</span>.</span><span class="intro-mobile">Ať už jste doma nebo v zahraničí, působíte lokálně nebo globálně – přecházejte bez problémů mezi zeměmi a měnami.</span></p>
           <div class="actions">
             <div class="button-color-block"><span class="notice-icon" aria-hidden="true">!</span><span>Nakupte 3× alespoň za 100 Kč</span></div>
             <a class="button" href="mailto:ahoj@studioforma.cz">Začít</a>
